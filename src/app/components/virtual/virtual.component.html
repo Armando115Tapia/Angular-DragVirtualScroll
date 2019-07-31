@@ -1,0 +1,32 @@
+<h1>Virtual Scroll</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <button class="btn btn-outline-primary btn-block m-5" type="button" (click)="irAlFinal()"> Ir al Final </button>
+  </div>
+  <div class="col">
+    <button class="btn btn-outline-secondary btn-block m-5" type="button" (click)="irAlIncio()"> Ir al Inicio </button>
+  </div>
+
+  <div class="col">
+    <button class="btn btn-outline-success btn-block m-5" type="button" (click)="irAlMedio()"> Ir al Medio </button>
+  </div>
+
+
+
+
+</div>
+
+
+
+<cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
+  <!-- <div *ngFor="let persona of personas"></div> -->
+  <!-- Funciona de la misma forma que un ngfor  -->
+  <div *cdkVirtualFor="let persona of personas; let i = index; let conteo = counter"
+    class="list-group-item  ">
+    <div class="animated pulse" > Item {{ i }} / {{ conteo }}</div>
+
+  </div>
+
+</cdk-virtual-scroll-viewport>
